@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactAutocomplete from 'react-autocomplete';
 import Input from '../input/Input';
+import './autocomplete.scss';
 
 const Autocomplete = ({ articles, searchValue, onSearchChange }) => (
   <ReactAutocomplete
@@ -22,7 +23,7 @@ const Autocomplete = ({ articles, searchValue, onSearchChange }) => (
         key={item.id}
         style={{ backgroundColor: highlighted ? '#eee' : 'transparent' }}
       >
-        {item.label}
+        <a href={item.id}>{item.label}</a>
       </div>
     )}
     value={searchValue}
