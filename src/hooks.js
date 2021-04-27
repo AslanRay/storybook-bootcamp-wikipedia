@@ -3,7 +3,7 @@ import {
 } from 'react';
 import axios from 'axios';
 
-export const useSearch = (query) => {
+export const useSearch = (query, limit = 10) => {
   const [state, setState] = useState({
     articles: [],
     status: 'IDLE',
@@ -23,7 +23,7 @@ export const useSearch = (query) => {
 
     cancelToken.current = axios.CancelToken.source();
 
-    axios.get(`https://www.mediawiki.org/w/api.php?origin=*&action=opensearch&search=${query}`, {
+    axios.get(`https://www.mediawiki.org/w/api.php?origin=*&action=opensearch&search=${query}&limit=${limit}`, {
       cancelToken: cancelToken.current.token,
     })
       .then((response) => {

@@ -23,7 +23,7 @@ const Autocomplete = ({ articles, searchValue, onSearchChange }) => (
         key={item.id}
         style={{ backgroundColor: highlighted ? '#eee' : 'transparent' }}
       >
-        <a href={item.id}>{item.label}</a>
+        <a href={item.id} target="_blank" rel="noreferrer noopener">{item.label}</a>
       </div>
     )}
     value={searchValue}
