@@ -1,0 +1,25 @@
+<!--- ListItem.stories.mdx -->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import ListItem from './ListItem';
+
+<Meta title="Components/ListItem" component={ListItem} />
+
+# ListItem
+
+ListItem es un componente que define como se vera
+cada elemento de la lista de busqueda
+
+<!--- This is your Story template function, shown here in React -->
+
+export const Template = (args) => <ListItem {...args} />
+
+<Canvas>
+  <Story name="Default" args={{ 
+    id: 'https//en.wikipedia.org/Test_Card_F',
+    label: 'Test list item',
+    }}>
+    {Template.bind({})}
+   </Story>
+</Canvas>
+
